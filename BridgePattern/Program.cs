@@ -15,26 +15,26 @@ namespace BridgePattern
 
         public static void Bridge()
         {
-            var clientRepository = new ClientRepository();
-            var productRepository = new ProductRepository();
+            // Create RefinedAbstraction this is what makes it different from strategy pattern structural vs behavioral 
 
-            var clientDataObject = new ClientDataObject();
-            clientRepository.AddObject(clientDataObject);
-            clientRepository.SaveChanges();
+            Customers customers = new Customers("Chicago");
 
-            clientRepository.CopyObject(clientDataObject);
+            // Set ConcreteImplementor
 
-            clientRepository.RemoveObject(clientDataObject);
-            clientRepository.SaveChanges();
+            customers.Data = new CustomersData();
 
-            var productDataObject = new ProductDataObject();
-            productRepository.AddObject(productDataObject);
-            clientRepository.SaveChanges();
+            // Exercise the bridge
 
-            productRepository.CopyObject(productDataObject);
+            customers.Show();
+            customers.Next();
+            customers.Show();
+            customers.Next();
+            customers.Show();
+            customers.Add("Henry Velasquez");
 
-            productRepository.RemoveObject(productDataObject);
-            productRepository.SaveChanges();
+            customers.ShowAll();
+
+            // Wait for user
 
             Console.ReadKey();
         }

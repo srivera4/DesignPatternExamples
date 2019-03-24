@@ -42,13 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customers.cs" />
+    <Compile Include="CustomersBase.cs" />
+    <Compile Include="CustomersData.cs" />
+    <Compile Include="DataObject.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ClientDataObject.cs" />
-    <Compile Include="ClientRepository.cs" />
     <Compile Include="Interface\DataObject.cs" />
     <Compile Include="Interface\Repository.cs" />
-    <Compile Include="ProductDataObject.cs" />
-    <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
